@@ -14,4 +14,4 @@ class Footer extends Component {
     }
 }
 
-export default Header
+export default Footer
