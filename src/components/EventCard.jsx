@@ -15,7 +15,13 @@ export default class EventCard extends Component {
     render() {
         return (
             <div>
-                <p>Event Title: { this.state.title }</p>
+                { this.props.events.map(event => {
+                    return (
+                        <div key={ event._id } >
+                            <p>Title: { event.title }</p>
+                        </div>
+                    )
+                })}
             </div>
         )
     }
