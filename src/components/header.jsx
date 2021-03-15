@@ -5,13 +5,12 @@ class Header extends Component {
         return (
             <div>
                 <header>
-                    <img src = '<i class="fab fa-cotton-bureau"></i>'/>
+                    <i class="fab fa-cotton-bureau"></i>
                     <h1>Gather</h1>
                     <nav>
                         Log in,
                         Sign up,
-                        Create,
-                        boop!
+                        Create
                     </nav>
                 </header>
             </div>
