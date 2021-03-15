@@ -8,17 +8,9 @@ if (process.env.NODE_ENV === 'development') {
   baseURL = 'heroku backend url here'
 }
 
+// state accessible as props
+
 export default class EventCard extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            id: this.props.event._id,
-            creator: this.props.event.creator,
-            title: this.props.event.title,
-            date: this.props.event.date,
-            category: this.props.event.category
-        }
-    }
 
     render() {
         return (
