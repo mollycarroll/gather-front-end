@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import EventCard from './components/EventCard.jsx'
+import Header from './components/Header.jsx'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+let baseURL = ''
+
+if(process.env.NODE_ENV === 'development') {
+	baseURL = 'http://localhost:3003'
+} else {
+	baseURL = 'your heroku backend url here'
+}
+
+console.log(`your current base url is ${baseURL}`)
+
+class App extends Component {
+	render() {
+		return (
+			<div>
+        <Header />
+        <EventCard />
+      </div>
+		)
+	}
 }
 
 export default App;
