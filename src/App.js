@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import EventCard from './components/EventCard.jsx'
-import Header from './components/Header.jsx'
+import Header from './components/header.jsx'
 
 let baseURL = ''
 
