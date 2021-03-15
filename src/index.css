@@ -1,8 +1,24 @@
+/* colors: https://www.palettelist.com/ */
+@import url('https://fonts.googleapis.com/css2?family=Raleway&family=Shadows+Into+Light+Two&display=swap');
+
+:root {
+  --main-font-family: 'Raleway', sans-serif;
+  --accent-font-family: 'Shadows Into Light Two', cursive;
+  --blush: #ffaaa5;
+  --mint: #a8e6cf;
+  --not-black: #212121;
+  --dk-grey: #757575;
+  --lt-grey: #BDBDBD;
+  --rose-gold: #ffd3b6;
+  --gold: #ffde7d;
+  --turquoise: #00b8a9;
+  --red-ish: #ea5455;
+}
+
 body {
+  background: var(--mint);
+  font-family: var(--main-font-family);
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
