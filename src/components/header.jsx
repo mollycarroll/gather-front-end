@@ -10,7 +10,8 @@ class Header extends Component {
                     <nav>
                         Log in,
                         Sign up,
-                        Create
+                        Create,
+                        boop!
                     </nav>
                 </header>
             </div>
