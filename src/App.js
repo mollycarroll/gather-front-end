@@ -48,6 +48,5 @@ class App extends Component {
 		)
 	}
 }
-// map over this.props.events inside event card
 
 export default App;

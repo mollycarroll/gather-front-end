@@ -18,7 +18,10 @@ export default class EventCard extends Component {
                 { this.props.events.map(event => {
                     return (
                         <div key={ event._id } >
-                            <p>Title: { event.title }</p>
+                            <h3>{ event.Title }</h3>
+                            <p>Creator: { event.Creator }</p>
+                            <p>Date: { event.Date }</p>
+                            <p>Category: { event.Category }</p>
                         </div>
                     )
                 })}
