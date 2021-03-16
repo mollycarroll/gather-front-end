@@ -1,8 +1,29 @@
+import axios from 'axios'
 import React, { Component } from 'react'
 
 // state accessible as props
 
+let baseURL = ''
+
+if (process.env.NODE_ENV === 'development') {
+  baseURL = 'http://localhost:3003'
+} else {
+  baseURL = 'heroku backend url here'
+}
+
 export default class EventCard extends Component {
+
+  deleteEvent(id) {
+    console.log('deleting a bookmark')
+
+    axios.delete(baseURL + '/events/' + id)
+    .then(res => {
+      const findIndex = this.state.events.findIndex(event => event._id === id)
+      const copyEvents = [...this.state.events]
+      copyEvents.splice(findIndex, 1)
+      this.setState({events: copyEvents})
+    })
+  }
 
 	render() {
 		return (
@@ -17,6 +38,7 @@ export default class EventCard extends Component {
                   <h5 className="each-title text-start">{ event.Title }</h5>
                   <p className="each-name text-start"><strong>Added By:</strong> { event.Creator }</p>
                   <p className="each-name text-start"><strong>Date(s):</strong> { event.Date }</p>
+                  <button onClick ={() => this.deleteEvent(event._id)}>Delete</button>
                   <p className="badge rounded-pill text-center position-absolute">{ event.Category }<i className="fas fa-glass-cheers ml-1"></i></p>
                 </div>
               )
