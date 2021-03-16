@@ -5,7 +5,7 @@ class Header extends Component {
 	render() {
 		return (
 			<div>
-        <nav className="navbar navbar-expand-lg mb-5">
+        <nav className="navbar navbar-expand-lg">
           <div className="container-fluid">
             <a className="navbar-brand" href="#"><i className="fab fa-cotton-bureau"></i><span className="navbar-text ml-2">
               Gather
