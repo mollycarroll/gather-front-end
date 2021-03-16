@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Home from './components/Home.jsx'
-import EventCard from './components/EventCard.jsx'
 import Header from './components/header.jsx'
+import NewForm from './components/NewForm.jsx'
 import axios from 'axios'
 import {
 	HashRouter as Router,
@@ -26,7 +26,7 @@ class App extends Component {
 			events: []
 		}
 
-
+		this.handleAddEvent = this.handleAddEvent.bind(this)
 	}
 
 	componentDidMount() {
@@ -45,6 +45,20 @@ class App extends Component {
 		// .then(parsedData => this.setState({ events: parsedData }), error => console.log(error))
 	}
 
+	handleAddEvent(event) {
+		const copyEvents = [...this.state.events]
+		console.log(event)
+		copyEvents.unshift(event)
+		this.setState({
+			events: copyEvents,
+			creator: '',
+            title: '',
+            date: '',
+            category: '',
+            description: ''
+		})
+	}
+
 	render() {
 		return (
 			<Router>
@@ -56,7 +70,7 @@ class App extends Component {
 					</Route>
 
 					<Route path='/create'>
-						{/* create new event page component here */}
+						<NewForm handleAddEvent={ (event) => this.handleAddEvent(event) } />
 					</Route>
 
 					<Route path='/my'>
