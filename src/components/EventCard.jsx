@@ -16,7 +16,7 @@ export default class EventCard extends Component {
   deleteEvent(id) {
     console.log('deleting a bookmark')
 
-    axios.delete(baseURL + '/events/' + id)
+    axios.delete(baseURL + '/events' + id)
     .then(res => {
       const findIndex = this.state.events.findIndex(event => event._id === id)
       const copyEvents = [...this.state.events]
