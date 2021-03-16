@@ -1,7 +1,13 @@
 import React, { Component } from 'react'
+import Home from './components/Home.jsx'
 import EventCard from './components/EventCard.jsx'
 import Header from './components/header.jsx'
 import axios from 'axios'
+import {
+	HashRouter as Router,
+	Switch,
+	Route
+  } from 'react-router-dom'
 
 let baseURL = ''
 
@@ -41,10 +47,24 @@ class App extends Component {
 
 	render() {
 		return (
-			<div>
-        <Header />
-        <EventCard events={ this.state.events }/> 
-      </div>
+			<Router>
+				<div>
+        			<Header />
+					<Switch>
+					<Route exact path='/'>
+						<Home events={ this.state.events } />
+					</Route>
+
+					<Route path='/create'>
+						{/* create new event page component here */}
+					</Route>
+
+					<Route path='/my'>
+						{/* my events page component here */}
+					</Route>
+					</Switch>
+      			</div>
+	  		</Router>
 		)
 	}
 }
