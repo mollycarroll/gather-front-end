@@ -4,21 +4,20 @@ class Header extends Component {
 	render() {
 		return (
 			<div>
-        <nav class="navbar navbar-expand-lg mb-5">
-          <div class="container-fluid">
-            <a class="navbar-brand" href="#"><i class="fab fa-cotton-bureau"></i></a>
-            <span class="navbar-text">
+        <nav className="navbar navbar-expand-lg mb-5">
+          <div className="container-fluid">
+            <a className="navbar-brand" href="#"><i className="fab fa-cotton-bureau"></i><span className="navbar-text ml-2">
               Gather
-            </span>
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link" href="#">Log In</a>
+            </span></a>
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+              <li className="nav-item">
+                <a className="nav-link" href="#">Log In</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Sign Up</a>
+              <li className="nav-item">
+                <a className="nav-link" href="#">Sign Up</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Create</a>
+              <li className="nav-item">
+                <a className="nav-link" href="#">Create</a>
               </li>
             </ul>
           </div>

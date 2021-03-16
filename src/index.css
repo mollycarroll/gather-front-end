@@ -18,6 +18,7 @@
 
 body {
   background: var(--mint);
+  color: var(--not-black);
   font-family: var(--main);
   margin: 0;
   -webkit-font-smoothing: antialiased;
@@ -36,7 +37,7 @@ nav {
 
 .fa-cotton-bureau {
   color: var(--red-ish);
-  font-size: 4em;
+  font-size: 2.5em;
 }
 
 .nav-link {
@@ -50,6 +51,106 @@ nav {
 }
 
 .navbar-text {
-  color: var(--not-black; );
+  color: var(--turquoise) !important;
   font-size: 2em;
+}
+
+.large {
+  border: 0;
+  background-image: linear-gradient(to right, var(--mint), var(--gold), var(--rose-gold), var(--blush), var(--rose-gold), var(--gold), var(--mint));
+  height: 3px;
+  margin-left: 10em;
+  margin-right: 10em;
+}
+
+.page-wrapper {
+  background: var(--mint);
+  padding: 1em;
+}
+
+.page-content {
+  animation: fade-in 1s ease;
+  background: var(--mint);
+}
+
+.page-content:hover .each-item {
+  filter: blur(1px);
+  opacity: .5;
+  transform: scale(.98);
+}
+
+.page-content:hover .each-item:hover {
+  animation: bounce 1s;
+  box-shadow: 0px 14px 80px #FFFFFF;
+  filter: blur(0px);
+  opacity: 1;
+  transform: scale(1);
+}
+
+.each-item {
+  background: var(--gold);
+  box-shadow: 0px 14px 80px #FFFFFF;
+  color: var(--not-black);
+  height: 15em;
+  margin: 2em;
+  padding: 1em;
+  width: 15em;
+}
+
+.each-title {
+  color: var(--red-ish);
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+.each-name {
+  color: var(--not-black);
+  font-size: 1em;
+}
+
+.rounded-pill {
+  background: var(--turquoise);
+  color: white;
+  font-weight: 700;
+  bottom: 0;
+  width: 40%
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(-40px)
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 60%, 100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  40% {
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+
+  80% {
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
 }
