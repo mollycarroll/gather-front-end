@@ -110,10 +110,10 @@ nav {
 
 .rounded-pill {
   background: var(--turquoise);
+  bottom: 0;
   color: white;
   font-weight: 700;
-  bottom: 0;
-  width: 40%
+  width: 40%;
 }
 
 .hero {
@@ -130,10 +130,24 @@ nav {
 
 .hero-text {
   color: white;
-  font-size: 6em;
+  font-size: 5em;
+  font-weight: 700;
 }
 
-*/ @keyframes fade-in {
+.real {
+  padding-top: 3em;
+}
+
+.reflection {
+  margin-top: -.8em;
+  -moz-transform: scaleY(-1);
+  -o-transform: scaleY(-1);
+  -webkit-transform: scaleY(-1);
+  transform: scaleY(-1);
+  -webkit-mask-image: -webkit-gradient(linear, right top, right bottom, from(transparent), color-stop(1%, transparent), to(rgba(0, 0, 0, 0.4)));
+}
+
+@keyframes fade-in {
   from {
     opacity: 0;
   }
