@@ -6,32 +6,32 @@ import { Link } from 'react-router-dom'
 
 let baseURL = ''
 
-if (process.env.NODE_ENV === 'development') {
-  baseURL = 'http://localhost:3003'
+if(process.env.NODE_ENV === 'development') {
+	baseURL = 'http://localhost:3003'
 } else {
-  baseURL = 'heroku backend url here'
+	baseURL = 'heroku backend url here'
 }
 
 export default class EventCard extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
+	constructor(props) {
+		super(props)
+		this.state = {
 			events: []
 		}
-  }
+	}
 
-  deleteEvent(id) {
-    console.log('deleting a bookmark')
+	deleteEvent(id) {
+		console.log('deleting a bookmark')
 
-    axios.delete(baseURL + '/events/' + id, {
-      method: 'DELETE'
-    }).then(res => {
-      const findIndex = this.state.events.findIndex(event => event._id === id)
-      const copyEvents = [...this.state.events]
-      copyEvents.splice(findIndex, 1)
-      this.setState({events: copyEvents})
-    })
-  }
+		axios.delete(baseURL + '/events/' + id, {
+			method: 'DELETE'
+		}).then(res => {
+			const findIndex = this.state.events.findIndex(event => event._id === id)
+			const copyEvents = [...this.state.events]
+			copyEvents.splice(findIndex, 1)
+			this.setState({ events: copyEvents })
+		})
+	}
 
 	render() {
 		return (
