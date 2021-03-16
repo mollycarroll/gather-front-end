@@ -70,9 +70,7 @@ class App extends Component {
 						<Home events={ this.state.events } />
 					</Route>
 					
-					<Route path='/:id'>
-						<Event />
-					</Route>
+					<Route path='/:id' component={Event} />
 
 					<Route path='/create'>
 						<NewForm handleAddEvent={ (event) => this.handleAddEvent(event) } />
