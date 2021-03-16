@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 // state accessible as props
 
@@ -42,7 +43,7 @@ export default class EventCard extends Component {
             { this.props.events.map(event => {
               return (
                 <div className="each-item d-flex flex-column rounded position-relative" key={ event._id } >
-                  <h5 className="each-title text-start">{ event.Title }</h5>
+                  <Link to={ event._id }><h5 className="each-title text-start">{ event.Title }</h5></Link>
                   <p className="each-name text-start"><strong>Added By:</strong> { event.Creator }</p>
                   <p className="each-name text-start"><strong>Date(s):</strong> { event.Date }</p>
                   <button onClick ={() => this.deleteEvent(event._id)}>Delete</button>

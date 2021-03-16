@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Home from './components/Home.jsx'
 import Header from './components/header.jsx'
 import NewForm from './components/NewForm.jsx'
+import Event from './components/Event.jsx'
 import axios from 'axios'
 import {
 	HashRouter as Router,
@@ -39,10 +40,6 @@ class App extends Component {
 			console.log(data)
 			this.setState({ events: data.data })
 		})
-
-		// fetch(baseURL + '/events')
-		// .then(data => { return data.json() }, error => console.log(error))
-		// .then(parsedData => this.setState({ events: parsedData }), error => console.log(error))
 	}
 
 	handleAddEvent(event) {
@@ -59,6 +56,10 @@ class App extends Component {
 		})
 	}
 
+	updateEvent(event) {
+		axios.put(baseURL + '/events/' + event.id)
+	}
+
 	render() {
 		return (
 			<Router>
@@ -67,6 +68,10 @@ class App extends Component {
 					<Switch>
 					<Route exact path='/'>
 						<Home events={ this.state.events } />
+					</Route>
+					
+					<Route path='/:id'>
+						<Event />
 					</Route>
 
 					<Route path='/create'>
