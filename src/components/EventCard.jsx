@@ -12,12 +12,19 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 export default class EventCard extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+			events: []
+		}
+  }
 
   deleteEvent(id) {
     console.log('deleting a bookmark')
 
-    axios.delete(baseURL + '/events' + id)
-    .then(res => {
+    axios.delete(baseURL + '/events/' + id, {
+      method: 'DELETE'
+    }).then(res => {
       const findIndex = this.state.events.findIndex(event => event._id === id)
       const copyEvents = [...this.state.events]
       copyEvents.splice(findIndex, 1)
