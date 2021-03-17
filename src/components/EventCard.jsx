@@ -46,8 +46,8 @@ export default class EventCard extends Component {
                   <Link to={ event._id } className="router-link"><h5 className="each-title text-start">{ event.Title }</h5></Link>
                   <p className="each-name text-start"><strong>Added By:</strong> { event.Creator }</p>
                   <p className="each-name text-start"><strong>Date(s):</strong> { event.Date }</p>
-                  <button onClick ={() => this.deleteEvent(event._id)}>Delete</button>
-                  {/* <i className="far fa-trash-alt" onClick={() => this.deleteEvent(event._id)}></i> */}
+                  {/* <button onClick ={() => this.deleteEvent(event._id)}>Delete</button> */}
+                  <i className="far fa-trash-alt position-absolute" onClick={() => this.deleteEvent(event._id)}></i>
                   <p className="badge rounded-pill text-center position-absolute">{ event.Category }<i className="fas fa-glass-cheers ml-1"></i></p>
                 </div>
               )
