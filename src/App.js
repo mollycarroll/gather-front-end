@@ -65,8 +65,6 @@ class App extends Component {
 					<Route exact path='/'>
 						<Home events={ this.state.events } />
 					</Route>
-					
-					<Route path='/:id' component={Event} />
 
 					<Route path='/create'>
 						<NewForm handleAddEvent={ (event) => this.handleAddEvent(event) } />
@@ -75,6 +73,8 @@ class App extends Component {
 					<Route path='/my'>
 						{/* my events page component here */}
 					</Route>
+
+					<Route path='/:id' component={Event} />
 					</Switch>
       			</div>
 	  		</Router>
