@@ -57,6 +57,14 @@ export default class Event extends Component {
         })
     }
 
+    deleteEvent() {
+      axios.delete(baseURL + '/events/' + this.props.match.params.id, {
+        method: 'DELETE'
+      }).then(res => {
+        console.log(res)
+      })
+    }
+
 	render() {
 		return (
 			<div>
@@ -70,6 +78,7 @@ export default class Event extends Component {
               <p className="each-name text-start"><strong>Date(s):</strong> { this.state.Date }</p>
               <p className="badge rounded-pill text-center position-absolute">{ this.state.Category }<i className="fas fa-glass-cheers ml-1"></i></p>
               <p className="each-name text-start"><strong>Description:</strong> { this.state.Description }</p>
+              <i className="far fa-trash-alt position-absolute" onClick={() => this.deleteEvent()}></i>
             </div>
 
           </section>
