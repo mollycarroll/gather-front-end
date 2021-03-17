@@ -18,7 +18,10 @@ export default class EventCard extends Component {
 		this.state = {
 			events: []
 		}
+		// this.findCategory = this.findCategory.bind(this)
 	}
+
+
 
 	deleteEvent(id) {
 		console.log('deleting a bookmark')
@@ -32,6 +35,20 @@ export default class EventCard extends Component {
 			this.setState({ events: copyEvents })
 		})
 	}
+
+	// findCategory() {
+	// 	const categoryType = this.state.event.Category
+	// 	let p;
+	//
+	// 	if(categoryType === 'Nature') {
+	// 		p = <p className="badge rounded-pill text-center position-absolute"></p>
+	// 	}
+	// 	if(categoryType === 'Night-out') {
+	// 		p = <p className="badge rounded-pill text-center position-absolute"></p>
+	// 	} else {
+	// 		p = <p className="badge text-center position-absolute"></p>
+	// 	}
+	// }
 
 	render() {
 		return (
@@ -48,6 +65,11 @@ export default class EventCard extends Component {
                   <p className="each-name text-start"><strong>Date(s):</strong> { event.Date }</p>
                   {/* <button onClick ={() => this.deleteEvent(event._id)}>Delete</button> */}
                   <i className="far fa-trash-alt position-absolute" onClick={() => this.deleteEvent(event._id)}></i>
+                  {/* { this.findCategory(event => {
+                    return (
+                      p +  { event.Category }
+                    )
+                  }) } */}
                   <p className="badge rounded-pill text-center position-absolute">{ event.Category }<i className="fas fa-glass-cheers ml-1"></i></p>
                 </div>
               )
