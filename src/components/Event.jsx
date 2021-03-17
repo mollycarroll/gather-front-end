@@ -27,43 +27,44 @@ export default class Event extends Component {
 		console.log(this.props.match.params.id)
 		axios.get(`${baseURL}/events/${this.props.match.params.id}`)
 			.then(response => {
-				this.setState({ 
-                    Creator: response.data.Creator,
-                    Title: response.data.Title,
-                    Date: response.data.Date,
-                    Category: response.data.Category,
-                    Description: response.data.Description
-                 })
+				this.setState({
+					Creator: response.data.Creator,
+					Title: response.data.Title,
+					Date: response.data.Date,
+					Category: response.data.Category,
+					Description: response.data.Description
+				})
 			})
 	}
 
-    handleChange(e) {
-        this.setState({ [e.target.id]: e.target.value })
-    }
+	handleChange(e) {
+		this.setState({
+			[e.target.id]: e.target.value })
+	}
 
-    handleSubmit(event) {
-        event.preventDefault()
-        const pack = {
-            Creator: this.state.Creator,
-            Title: this.state.Title,
-            Date: this.state.Date,
-            Category: this.state.Category,
-            Description: this.state.Description
-        }
+	handleSubmit(event) {
+		event.preventDefault()
+		const pack = {
+			Creator: this.state.Creator,
+			Title: this.state.Title,
+			Date: this.state.Date,
+			Category: this.state.Category,
+			Description: this.state.Description
+		}
 
-        axios.put(`${baseURL}/events/${this.props.match.params.id}`, pack)
-        .then(response => {
-            console.log(response)
-        })
-    }
+		axios.put(`${baseURL}/events/${this.props.match.params.id}`, pack)
+			.then(response => {
+				console.log(response)
+			})
+	}
 
-    deleteEvent() {
-      axios.delete(baseURL + '/events/' + this.props.match.params.id, {
-        method: 'DELETE'
-      }).then(res => {
-        console.log(res)
-      })
-    }
+	deleteEvent() {
+		axios.delete(baseURL + '/events/' + this.props.match.params.id, {
+			method: 'DELETE'
+		}).then(res => {
+			console.log(res)
+		})
+	}
 
 	render() {
 		return (
@@ -78,19 +79,19 @@ export default class Event extends Component {
               <p className="each-name text-start"><strong>Date(s):</strong> { this.state.Date }</p>
               <p className="badge rounded-pill text-center position-absolute">{ this.state.Category }<i className="fas fa-glass-cheers ml-1"></i></p>
               <p className="each-name text-start"><strong>Description:</strong> { this.state.Description }</p>
-              <i className="far fa-trash-alt position-absolute" onClick={() => this.deleteEvent()}></i>
+              {/* <i className="far fa-trash-alt position-absolute" onClick={() => this.deleteEvent()}></i> */}
             </div>
 
           </section>
 
         </div>
 
-        <EditForm 
-            event={ this.state } 
-            handleChange={ (e) => this.handleChange(e) } 
+        <EditForm
+            event={ this.state }
+            handleChange={ (e) => this.handleChange(e) }
             handleSubmit={ (e) => this.handleSubmit(e) }
-        /> 
-            
+        />
+
       </div>
 		)
 	}
