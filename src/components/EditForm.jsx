@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { Component } from 'react'
+import { Redirect } from 'react-router-dom'
 
 let baseURL = ''
 
@@ -21,8 +22,11 @@ export default class EditForm extends Component {
 		// 	})
     }
 
-
     render() {
+        if (this.props.event.redirect) {
+            return (<Redirect to='/' />)
+        }
+
         return (
             <div>
                 <form onSubmit={ (e) => this.props.handleSubmit(e) }>
@@ -35,8 +39,12 @@ export default class EditForm extends Component {
                     <label htmlFor='date'>Date: </label>
                     <input type='date' name='date' id='Date' value={ this.props.event.Date } onChange={ (event) => this.props.handleChange(event) } />
                     <br/>
+                    {/* <label htmlFor='category'>Category: </label>
+                    <input type='text' name='category' id='Category' value={ this.props.event.Category } onChange={ (event) => this.props.handleChange(event) } /> */}
+
                     <label htmlFor='category'>Category: </label>
                     <input type='text' name='category' id='Category' value={ this.props.event.Category } onChange={ (event) => this.props.handleChange(event) } />
+
                     <br/>
                     <label htmlFor='description'>Description: </label>
                     <input type='textarea' name='description' id='Description' value={ this.props.event.Description } onChange={ (event) => this.props.handleChange(event) } />

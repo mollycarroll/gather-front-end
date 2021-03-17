@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { Component } from 'react'
+import { Redirect } from 'react-router-dom'
 
 let baseURL = ''
 
@@ -17,18 +18,24 @@ export default class NewForm extends Component {
             title: '',
             date: '',
             category: '',
-            description: ''
+            description: '',
+            redirect: false
         }
 
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.dropdownChange = this.dropdownChange(this)
     }
 
     handleChange(event) {
         this.setState({ [event.target.id]: event.target.value })
     }
 
-    /* curl -X DELETE http://localhost:3003/events/6050baa7943b9d1b27318beb */
+    dropdownChange(e) {
+        this.setState({
+            category: e.value
+        })
+    }
 
     handleSubmit(event) {
         event.preventDefault()
@@ -48,7 +55,8 @@ export default class NewForm extends Component {
                 title: '',
                 date: '',
                 category: '',
-                description: ''
+                description: '',
+                redirect: true
             })
             
         })
@@ -58,6 +66,10 @@ export default class NewForm extends Component {
     }
 
     render() {
+        if (this.state.redirect) {
+            return (<Redirect to='/' />)
+        }
+
         return (
             <div>
                 <form onSubmit={ (event) => this.handleSubmit(event) }>
