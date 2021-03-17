@@ -32,6 +32,7 @@ export default class Event extends Component {
 
 	componentDidMount() {
 		console.log(this.props.match.params.id)
+		console.log(this.state.redirect)
 		axios.get(`${baseURL}/events/${this.props.match.params.id}`)
 			.then(response => {
 				this.setState({
@@ -63,6 +64,7 @@ export default class Event extends Component {
      axios.put(`${baseURL}/events/${this.props.match.params.id}`, pack)
         .then(response => {
           this.setState({ redirect: true })
+			window.location.reload(false)
         })
     }
 

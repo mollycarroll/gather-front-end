@@ -15,16 +15,18 @@ export default class EditForm extends Component {
     // componentDidMount -- sets state -- example: id: this.props.event._id
     // props might load before the component so use componentDidMount
 
-    componentDidMount() {
+    // componentDidMount() {
         // axios.get(`${baseURL}/events/${this.props.match.params.id}`)
 		// 	.then(response => {
 		// 		this.setState({ event: response.data })
 		// 	})
-    }
+    // }
 
     render() {
         if (this.props.event.redirect) {
-            return (<Redirect to='/' />)
+            return (
+                <Redirect to='/' />
+            )
         }
 
         return (
