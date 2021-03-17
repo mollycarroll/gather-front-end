@@ -100,6 +100,12 @@ nav {
   font-weight: 700;
 }
 
+.router-link:hover {
+  background-image: linear-gradient(to right, var(--mint), var(--turquoise), var(--red-ish), var(--turquoise), var(--mint));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .each-name {
   color: var(--not-black);
   font-size: 1em;
@@ -113,6 +119,7 @@ nav {
   width: 40%;
 }
 
+/* refer to line 9 in RESOURCES.md for citation */
 .hero {
   background: url(./assets/hero.jpeg) no-repeat center;
   background-size: cover;
