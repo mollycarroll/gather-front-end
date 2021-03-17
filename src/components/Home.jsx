@@ -6,7 +6,7 @@ export default class Home extends Component {
 		return (
 
 			<div>
-        <div className="container-fluid px-0 mb-5">
+        <div className="container-fluid px-0 mb-5 for-backgrounds">
           <div className="hero">
             <p className="text-center hero-text mb-0 d-flex justify-content-center real">Gather</p>
             <p className="text-center hero-text reflection d-flex justify-content-center">Gather</p>
