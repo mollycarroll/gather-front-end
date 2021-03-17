@@ -56,10 +56,6 @@ class App extends Component {
 		})
 	}
 
-	updateEvent(event) {
-		axios.put(baseURL + '/events/' + event.id)
-	}
-
 	render() {
 		return (
 			<Router>

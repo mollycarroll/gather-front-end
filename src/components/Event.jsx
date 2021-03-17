@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { Component } from 'react'
+import EditForm from './EditForm.jsx'
 
 let baseURL = ''
 
@@ -40,6 +41,8 @@ export default class Event extends Component {
                 <p>Date: { this.state.event.Date }</p>
                 <p>Category: { this.state.event.Category }</p>
                 <p>Description: { this.state.event.Description }</p>
+                
+                <EditForm event={ this.state.event }/>
             </div>
         )
     }
