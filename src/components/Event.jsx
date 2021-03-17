@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { Component } from 'react'
 import EditForm from './EditForm.jsx'
+import Confirm from './Confirm.jsx'
 
 let baseURL = ''
 
@@ -45,7 +46,8 @@ export default class Event extends Component {
 
 	handleChange(e) {
 		this.setState({
-			[e.target.id]: e.target.value })
+			[e.target.id]: e.target.value
+		})
 	}
 
 	handleSubmit(event) {
@@ -74,7 +76,7 @@ export default class Event extends Component {
 
 	render() {
 		return (
-			<div>
+			<div className="for-backgrounds">
         <h1 className="text-center">Get the Deets</h1>
         <hr className="my-5 large"></hr>
         <div className="page-wrapper d-flex">
@@ -85,7 +87,13 @@ export default class Event extends Component {
               <p className="each-name text-start"><strong>Date(s):</strong> { this.state.Date }</p>
               <p className="badge rounded-pill text-center position-absolute">{ this.state.Category }<i className="fas fa-glass-cheers ml-1"></i></p>
               <p className="each-name text-start"><strong>Description:</strong> { this.state.Description }</p>
-              {/* <i className="far fa-trash-alt position-absolute" onClick={() => this.deleteEvent()}></i> */}
+							<Confirm onConfirm={() => {
+								this.deleteEvent();
+							}}
+								body="Are you sure you want to delete this?"
+							title="⚠️ Heads Up!">
+								<i className="far fa-trash-alt position-absolute"></i>
+							</Confirm>
             </div>
 
           </section>
