@@ -53,8 +53,10 @@ export default class EventCard extends Component {
 	render() {
 		return (
 			<div>
-        <h1 className="text-center">Check Out What's Happening</h1>
-        <hr className="my-5 large"></hr>
+				<div className="for-backrounds">
+					<h1 className="text-center">Check Out What's Happening</h1>
+	        <hr className="my-5 large"></hr>
+				</div>
         <div className="page-wrapper d-flex">
           <section className="page-content d-flex flex-wrap justify-content-center">
             { this.props.events.map(event => {
