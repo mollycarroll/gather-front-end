@@ -58,7 +58,7 @@ export default class Event extends Component {
 			Description: this.state.Description
 		}
 
-        axios.put(`${baseURL}/events/${this.props.match.params.id}`, pack)
+     axios.put(`${baseURL}/events/${this.props.match.params.id}`, pack)
         .then(response => {
           this.setState({ redirect: true })
         })
