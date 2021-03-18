@@ -26,11 +26,6 @@ export default class Event extends Component {
 
 	}
 
-	// refresh data in component on redirect -- research
-	// react router docs
-	// get data to update on redirect
-	// data is loaded on componentDidMount but not reloaded
-
 	componentDidMount() {
 		console.log(this.props.match.params.id)
 		console.log(this.state.redirect)
@@ -74,6 +69,7 @@ export default class Event extends Component {
 			method: 'DELETE'
 		}).then(res => {
 			this.setState({ redirect: true })
+			window.location.reload(false)
 		})
 	}
 
@@ -98,9 +94,7 @@ export default class Event extends Component {
 								<i className="far fa-trash-alt position-absolute"></i>
 							</Confirm>
             </div>
-
           </section>
-
         </div>
 
         <EditForm

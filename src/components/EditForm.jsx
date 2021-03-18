@@ -12,16 +12,6 @@ if(process.env.NODE_ENV === 'development') {
 
 export default class EditForm extends Component {
 
-	// componentDidMount -- sets state -- example: id: this.props.event._id
-	// props might load before the component so use componentDidMount
-
-	// componentDidMount() {
-	// axios.get(`${baseURL}/events/${this.props.match.params.id}`)
-	// 	.then(response => {
-	// 		this.setState({ event: response.data })
-	// 	})
-	// }
-
 	render() {
 		if(this.props.event.redirect) {
 			return (
@@ -41,8 +31,6 @@ export default class EditForm extends Component {
                     <label htmlFor='date'>Date: </label>
                     <input type='date' name='date' id='Date' value={ this.props.event.Date } onChange={ (event) => this.props.handleChange(event) } />
                     <br/>
-                    {/* <label htmlFor='category'>Category: </label>
-                    <input type='text' name='category' id='Category' value={ this.props.event.Category } onChange={ (event) => this.props.handleChange(event) } /> */}
 
                     <label htmlFor='category'>Category: </label>
                     <input type='text' name='category' id='Category' value={ this.props.event.Category } onChange={ (event) => this.props.handleChange(event) } />

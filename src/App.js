@@ -81,10 +81,6 @@ class App extends Component {
 						<NewForm handleAddEvent={ (event) => this.handleAddEvent(event) } />
 					</Route>
 
-					<Route path='/my'>
-						{/* my events page component here */}
-					</Route>
-
 					<Route path='/:id' component={Event} />
 					</Switch>
       			</div>
