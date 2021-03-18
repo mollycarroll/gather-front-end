@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import EditForm from './EditForm.jsx'
 import Confirm from './Confirm.jsx'
 import Explore from './Explore.jsx'
+import { withRouter } from 'react-router-dom'
 
 let baseURL = ''
 
@@ -12,7 +13,7 @@ if(process.env.NODE_ENV === 'development') {
 	baseURL = 'https://pure-waters-81977.herokuapp.com'
 }
 
-export default class Event extends Component {
+class Event extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
@@ -113,8 +114,10 @@ export default class Event extends Component {
         	/>
 		</div>
 
-		<Explore />
+		<Explore cities = {this.props.cities}/>
       </div>
 		)
 	}
 }
+
+export default withRouter(Event)
