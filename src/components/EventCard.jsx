@@ -21,7 +21,6 @@ export default class EventCard extends Component {
 	}
 
 
-
 	deleteEvent(id) {
 		console.log('deleting a bookmark')
 
