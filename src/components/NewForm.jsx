@@ -119,6 +119,14 @@ export default class NewForm extends Component {
             </Col>
           </Form.Row>
         </Form.Group>
+				<Form.Group>
+          <Form.Row>
+            <Form.Label column lg={1} htmlFor='description'>Description:</Form.Label>
+            <Col className="col-sm-2">
+              <Form.Control as='textarea' rows={6} name='description' id='description' onChange={ this.handleChange } />
+            </Col>
+          </Form.Row>
+        </Form.Group>
         <Button type = "submit">Create New Event</Button>
       </Form>
 		)
