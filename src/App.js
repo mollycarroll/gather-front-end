@@ -33,6 +33,7 @@ class App extends Component {
 
 	componentDidMount() {
 		this.getEvents()
+		this.getCities()
 	}
 
 	getEvents() {
@@ -42,6 +43,15 @@ class App extends Component {
 			this.setState({ events: data.data })
 		})
 	}
+
+
+    getCities() {
+        axios.get(baseURL + '/cities')
+        .then(data => {
+            console.log(data)
+            this.setState({ cities: data.data})
+        })
+    }
 
 	handleAddEvent(event) {
 		const copyEvents = [...this.state.events]

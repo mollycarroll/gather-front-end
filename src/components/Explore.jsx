@@ -10,6 +10,8 @@ if(process.env.NODE_ENV === 'development') {
 	baseURL = 'your heroku backend url here'
 }
 
+
+
 export default class Explore extends Component {
     constructor(props) {
         super(props)
@@ -20,22 +22,12 @@ export default class Explore extends Component {
         }
     }
 
-    componentDidMount() {
-		this.getCities()
-	}
-
-    getCities() {
-        axios.get(baseURL + '/events/')
-        .then(data => {
-            console.log(data)
-            this.setState({ cities: data.data})
-        })
-    }
-
     
     render() {
         return (
-            <div></div>
+            <div>
+                <h3>Gather Here: </h3>
+            </div>
         )
     }
 };
