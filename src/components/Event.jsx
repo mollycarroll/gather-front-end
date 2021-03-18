@@ -21,7 +21,8 @@ export default class Event extends Component {
 			Date: '',
 			Category: '',
 			Description: '',
-			redirect: false
+			redirect: false,
+			editForm: false
 		}
 
 	}
@@ -73,7 +74,12 @@ export default class Event extends Component {
 		})
 	}
 
+	toggleEditForm() {
+		this.setState({ editForm: !this.state.editForm })
+	}
+
 	render() {
+		const editForm = this.state.editForm
 		return (
 			<div className="for-backgrounds">
         <h1 className="text-center">Get the Deets</h1>
@@ -96,12 +102,17 @@ export default class Event extends Component {
             </div>
           </section>
         </div>
+		
+		<button onClick={ () => this.toggleEditForm() }>Edit Event</button>
+		
+		<div className={editForm ? 'edit-form' : null}>
+			<EditForm
+            	event={ this.state }
+            	handleChange={ (e) => this.handleChange(e) }
+            	handleSubmit={ (e) => this.handleSubmit(e) }
+        	/>
+		</div>
 
-        <EditForm
-            event={ this.state }
-            handleChange={ (e) => this.handleChange(e) }
-            handleSubmit={ (e) => this.handleSubmit(e) }
-        />
 		<Explore />
       </div>
 		)
