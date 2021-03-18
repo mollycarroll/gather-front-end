@@ -21,15 +21,15 @@ export default class Event extends Component {
 			Date: '',
 			Category: '',
 			Description: '',
-      redirect: false
+			redirect: false
 		}
 
 	}
 
-  // refresh data in component on redirect -- research
-  // react router docs
-  // get data to update on redirect
-  // data is loaded on componentDidMount but not reloaded
+	// refresh data in component on redirect -- research
+	// react router docs
+	// get data to update on redirect
+	// data is loaded on componentDidMount but not reloaded
 
 	componentDidMount() {
 		console.log(this.props.match.params.id)
@@ -62,20 +62,20 @@ export default class Event extends Component {
 			Description: this.state.Description
 		}
 
-     axios.put(`${baseURL}/events/${this.props.match.params.id}`, pack)
-        .then(response => {
-          this.setState({ redirect: true })
-			window.location.reload(false)
-        })
-    }
+		axios.put(`${baseURL}/events/${this.props.match.params.id}`, pack)
+			.then(response => {
+				this.setState({ redirect: true })
+				window.location.reload(false)
+			})
+	}
 
-    deleteEvent() {
-      axios.delete(baseURL + '/events/' + this.props.match.params.id, {
-        method: 'DELETE'
-      }).then(res => {
-        this.setState({ redirect: true })
-      })
-    }
+	deleteEvent() {
+		axios.delete(baseURL + '/events/' + this.props.match.params.id, {
+			method: 'DELETE'
+		}).then(res => {
+			this.setState({ redirect: true })
+		})
+	}
 
 	render() {
 		return (

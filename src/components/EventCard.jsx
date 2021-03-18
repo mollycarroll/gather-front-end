@@ -1,7 +1,6 @@
 import axios from 'axios'
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import Moment from 'react-moment';
 
 // state accessible as props
 
@@ -65,7 +64,7 @@ export default class EventCard extends Component {
 								<div className="each-item d-flex flex-column rounded position-relative" key={ event._id } >
 									<Link to={ event._id } className="router-link"><h5 className="each-title text-start">{ event.Title }</h5></Link>
 									<p className="each-name text-start"><strong>Added By:</strong> { event.Creator }</p>
-									<Moment format="MM/DD/YYYY"><p className="each-name text-start"><strong>Date(s):</strong> { event.Date }</p></Moment>
+									<p className="each-name text-start"><strong>Date(s):</strong> { event.Date }</p>
                   {/* { this.findCategory(event => {
                     return (
                       p +  { event.Category }
