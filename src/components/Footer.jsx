@@ -5,9 +5,7 @@ class Footer extends Component {
         return (
             <div>
                 <footer>
-                    <a href = 'https://github.com/JameraMcNeil/gather'>
-                    Completed by Jamera McNeil, Molly Carroll, and Jessica Gallagher
-                    </a>
+                    <p>Web app by Jamera McNeil, Molly Carroll, and Jessica Gallagher. <a href='https://github.com/mollycarroll/gather-front-end'>View on GitHub</a></p>
                 </footer>
             </div>
         )
