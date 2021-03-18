@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { Component } from 'react'
 import EditForm from './EditForm.jsx'
 import Confirm from './Confirm.jsx'
+import Explore from './Explore.jsx'
 
 let baseURL = ''
 
@@ -107,7 +108,7 @@ export default class Event extends Component {
             handleChange={ (e) => this.handleChange(e) }
             handleSubmit={ (e) => this.handleSubmit(e) }
         />
-
+		<Explore />
       </div>
 		)
 	}
