@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import Moment from 'react-moment';
 
 // state accessible as props
 
@@ -51,20 +52,20 @@ export default class EventCard extends Component {
 	// }
 
 	render() {
-			return (
-					<div>
-						<div className="for-backrounds">
-							<h1 className="text-center">Check Out What's Happening</h1>
-							<hr className="my-5 large"></hr>
-						</div>
-						<div className="page-wrapper d-flex">
-							<section className="page-content d-flex flex-wrap justify-content-center">
-								{ this.props.events.map(event => {
-									return (
-										<div className="each-item d-flex flex-column rounded position-relative" key={ event._id } >
-											<Link to={ event._id } className="router-link"><h5 className="each-title text-start">{ event.Title }</h5></Link>
-											<p className="each-name text-start"><strong>Added By:</strong> { event.Creator }</p>
-											<p className="each-name text-start"><strong>Date(s):</strong> { event.Date }</p>
+		return (
+			<div>
+				<div className="for-backrounds">
+					<h1 className="text-center">Check Out What's Happening</h1>
+					<hr className="my-5 large"></hr>
+				</div>
+				<div className="page-wrapper d-flex">
+					<section className="page-content d-flex flex-wrap justify-content-center">
+						{ this.props.events.map(event => {
+							return (
+								<div className="each-item d-flex flex-column rounded position-relative" key={ event._id } >
+									<Link to={ event._id } className="router-link"><h5 className="each-title text-start">{ event.Title }</h5></Link>
+									<p className="each-name text-start"><strong>Added By:</strong> { event.Creator }</p>
+									<Moment format="MM/DD/YYYY"><p className="each-name text-start"><strong>Date(s):</strong> { event.Date }</p></Moment>
                   {/* { this.findCategory(event => {
                     return (
                       p +  { event.Category }
@@ -75,7 +76,7 @@ export default class EventCard extends Component {
               )
             })}
           </section>
-        </div> 
+        </div>
 		</div>
 		)
 	}

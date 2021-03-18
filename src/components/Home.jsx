@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import EventCard from './EventCard'
-import FormTest from './FormTest'
 
 export default class Home extends Component {
 	render() {
@@ -13,7 +12,6 @@ export default class Home extends Component {
             <p className="text-center hero-text reflection d-flex justify-content-center">Gather</p>
           </div>
         </div>
-				<FormTest />
         <EventCard events={ this.props.events }/>
   			</div>
 		)
