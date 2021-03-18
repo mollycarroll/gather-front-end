@@ -20,10 +20,6 @@
     "react-select": "^4.2.1",
     "web-vitals": "^1.1.1"
   },
-  "engines": {
-    "node": "15.6.0",
-    "npm": "7.4.0"
-  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

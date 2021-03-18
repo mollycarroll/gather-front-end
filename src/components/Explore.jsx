@@ -13,21 +13,21 @@ if(process.env.NODE_ENV === 'development') {
 
 
 export default class Explore extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            City: '',
-            State: '',
-            Activity: ''
-        }
-    }
+	constructor(props) {
+		super(props)
+		this.state = {
+			City: '',
+			State: '',
+			Activity: ''
+		}
+	}
 
-    
-    render() {
-        return (
-            <div>
+
+	render() {
+		return (
+			<div>
                 <h3>Gather Here: </h3>
             </div>
-        )
-    }
+		)
+	}
 };
