@@ -3,8 +3,6 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import Moment from 'react-moment';
 
-// state accessible as props
-
 let baseURL = ''
 
 if(process.env.NODE_ENV === 'development') {
@@ -19,7 +17,7 @@ export default class EventCard extends Component {
 		this.state = {
 			events: []
 		}
-		// this.findCategory = this.findCategory.bind(this)
+
 	}
 
 
@@ -37,20 +35,6 @@ export default class EventCard extends Component {
 		})
 	}
 
-	// findCategory() {
-	// 	const categoryType = this.state.event.Category
-	// 	let p;
-	//
-	// 	if(categoryType === 'Nature') {
-	// 		p = <p className="badge rounded-pill text-center position-absolute"></p>
-	// 	}
-	// 	if(categoryType === 'Night-out') {
-	// 		p = <p className="badge rounded-pill text-center position-absolute"></p>
-	// 	} else {
-	// 		p = <p className="badge text-center position-absolute"></p>
-	// 	}
-	// }
-
 	render() {
 		return (
 			<div>
@@ -66,11 +50,7 @@ export default class EventCard extends Component {
 									<Link to={ event._id } className="router-link"><h5 className="each-title text-start">{ event.Title }</h5></Link>
 									<p className="each-name text-start"><strong>Added By:</strong> { event.Creator }</p>
 									<p className="each-name text-start"><strong>Date:</strong> <Moment format="MM/DD/YYYY">{ event.Date }</Moment></p>
-                  {/* { this.findCategory(event => {
-                    return (
-                      p +  { event.Category }
-                    )
-                  }) } */}
+
                   <p className="badge rounded-pill text-center position-absolute">{ event.Category }<i className="fas fa-glass-cheers ml-1"></i></p>
                 </div>
               )
@@ -80,9 +60,5 @@ export default class EventCard extends Component {
 		</div>
 		)
 	}
-} {
-	/* <h3>{ event.Title }</h3>
-	<p>Creator: { event.Creator }</p>
-	<p>Date: { event.Date }</p>
-	<p>Category: { event.Category }</p> */
-}
+
+} 

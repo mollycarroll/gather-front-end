@@ -16,15 +16,6 @@ if(process.env.NODE_ENV === 'development') {
 	baseURL = 'https://pure-waters-81977.herokuapp.com'
 }
 
-const options = [
-	{ value: 'Night-out', label: 'Night-out' },
-	{ value: 'Nature', label: 'Nature' },
-	{ value: 'Game Night', label: 'Game Night' },
-	{ value: 'Restaurant', label: 'Restaurant' },
-	{ value: 'Movie', label: 'Movie' },
-	{ value: 'House Party', label: 'House Party' }
-];
-
 export default class NewForm extends Component {
 	constructor(props) {
 		super(props)
@@ -143,21 +134,4 @@ export default class NewForm extends Component {
       </Form>
 		)
 	}
-}
-
-
-{
-	/* <form onSubmit={ (event) => this.handleSubmit(event) }>
-            <label htmlFor='creator'>Creator: </label>
-            <input type='text' name='creator' id='creator' onChange={ this.handleChange } />
-            <label htmlFor='title'>Title: </label>
-            <input type='text' name='title' id='title' onChange={ this.handleChange } />
-            <label htmlFor='date'>Date: </label>
-            <input type='date' name='date' id='date' onChange={ this.handleChange } />
-            <label htmlFor='category'>Category: </label>
-            <input type='text' name='category' id='category' onChange={ this.handleChange } />
-            <label htmlFor='description'>Description: </label>
-            <input type='textarea' name='description' id='description' onChange={ this.handleChange } />
-            <input type='submit' value='Create new event' />
-	</form> */
 }
