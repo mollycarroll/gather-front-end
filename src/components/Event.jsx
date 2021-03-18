@@ -22,7 +22,7 @@ export default class Event extends Component {
 			Category: '',
 			Description: '',
 			redirect: false,
-			editForm: false
+			editForm: true
 		}
 
 	}
