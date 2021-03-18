@@ -8,14 +8,14 @@ import {
 	HashRouter as Router,
 	Switch,
 	Route
-  } from 'react-router-dom'
+} from 'react-router-dom'
 
 let baseURL = ''
 
 if(process.env.NODE_ENV === 'development') {
 	baseURL = 'http://localhost:3003'
 } else {
-	baseURL = 'https://pure-waters-81977.herokuapp.com/'
+	baseURL = 'https://pure-waters-81977.herokuapp.com'
 }
 
 console.log(`your current base url is ${baseURL}`)
@@ -38,20 +38,20 @@ class App extends Component {
 
 	getEvents() {
 		axios.get(baseURL + '/events')
-		.then(data => {
-			console.log(data)
-			this.setState({ events: data.data })
-		})
+			.then(data => {
+				console.log(data)
+				this.setState({ events: data.data })
+			})
 	}
 
 
-    getCities() {
-        axios.get(baseURL + '/cities')
-        .then(data => {
-            console.log(data)
-            this.setState({ cities: data.data})
-        })
-    }
+	getCities() {
+		axios.get(baseURL + '/cities')
+			.then(data => {
+				console.log(data)
+				this.setState({ cities: data.data })
+			})
+	}
 
 	handleAddEvent(event) {
 		const copyEvents = [...this.state.events]
@@ -60,10 +60,10 @@ class App extends Component {
 		this.setState({
 			events: copyEvents,
 			creator: '',
-            title: '',
-            date: '',
-            category: '',
-            description: ''
+			title: '',
+			date: '',
+			category: '',
+			description: ''
 		})
 	}
 

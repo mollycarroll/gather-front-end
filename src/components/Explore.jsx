@@ -7,27 +7,27 @@ let baseURL = ''
 if(process.env.NODE_ENV === 'development') {
 	baseURL = 'http://localhost:3003'
 } else {
-	baseURL = 'https://pure-waters-81977.herokuapp.com/'
+	baseURL = 'https://pure-waters-81977.herokuapp.com'
 }
 
 
 
 export default class Explore extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            City: '',
-            State: '',
-            Activity: ''
-        }
-    }
+	constructor(props) {
+		super(props)
+		this.state = {
+			City: '',
+			State: '',
+			Activity: ''
+		}
+	}
 
-    
-    render() {
-        return (
-            <div>
+
+	render() {
+		return (
+			<div>
                 <h3>Gather Here: </h3>
             </div>
-        )
-    }
+		)
+	}
 };

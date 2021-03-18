@@ -10,7 +10,7 @@ let baseURL = ''
 if(process.env.NODE_ENV === 'development') {
 	baseURL = 'http://localhost:3003'
 } else {
-	baseURL = 'https://pure-waters-81977.herokuapp.com/'
+	baseURL = 'https://pure-waters-81977.herokuapp.com'
 }
 
 export default class EventCard extends Component {
