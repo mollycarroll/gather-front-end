@@ -20,7 +20,7 @@ class Event extends Component {
 			Category: '',
 			Description: '',
 			redirect: false,
-			editForm: true
+			editForm: false
 		}
 	}
 	componentDidMount() {
