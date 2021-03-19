@@ -3,7 +3,6 @@ import Home from './components/Home.jsx'
 import Header from './components/header.jsx'
 import NewForm from './components/NewForm.jsx'
 import Event from './components/Event.jsx'
-import Footer from './components/Footer.jsx'
 import axios from 'axios'
 import {
 	HashRouter as Router,
@@ -85,7 +84,6 @@ class App extends Component {
 						<Route exact path='/:id' render={(props) => <Event cities ={this.state.cities}/>} />
 					</Switch>
 				</div>
-				<Footer />
 			</Router>
 
 		)

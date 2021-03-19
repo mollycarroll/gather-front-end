@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { Component } from 'react'
+// eslint-disable-next-line
 import { Redirect } from 'react-router-dom'
 
 let baseURL = ''
@@ -11,7 +12,8 @@ if(process.env.NODE_ENV === 'development') {
 }
 
 
-class Explore extends Component {
+
+export default class Explore extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
@@ -33,17 +35,6 @@ class Explore extends Component {
 				})
 			})
 	}
-
-	getCities() {
-		axios.get(baseURL + '/cities')
-			.then(data => {
-				console.log(data)
-				this.setState({ cities: data.data }, () => {
-					this.randomCities()
-				})
-			})
-	}
-
 
 
 	componentDidMount() {
@@ -71,15 +62,21 @@ class Explore extends Component {
 
 				<div className="gather-here">
 					{/* after the icon, have it render city, state */}
-					<i class="fas fa-globe-americas mt-4"></i><span>{ this.state.someRandomCity.City}, { this.state.someRandomCity.State}</span>
+					<i class="fas fa-globe-americas mt-4"></i><span className="gather-here-text">City, State</span>
 					<br></br><br></br>
 					{/* after the icon, have it render activity */}
-					<i class="fas fa-info ml-1"></i><span>{ this.state.someRandomCity.Activity}</span>
+					<i class="fas fa-info ml-1"></i><span className="gather-here-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
 				</div>
+
+
+
+
+
+				{/* <p>City: {this.state.someRandomCity.City} </p>
+					<p>State: {this.state.someRandomCity.State} </p>
+				<p>Activity: {this.state.someRandomCity.Activity} </p> */}
 
             </div>
 		)
 	}
 };
-
-export default Explore

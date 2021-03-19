@@ -141,12 +141,6 @@ nav {
 .hero {
   background: url(./assets/hero.jpeg) no-repeat center;
   background-size: cover;
-  box-shadow: 0 0.6px 2.2px rgba(0, 0, 0, 0.02),
-    0 1.5px 5.3px rgba(0, 0, 0, 0.028),
-    0 2.9px 10px rgba(0, 0, 0, 0.035),
-    0 5.1px 17.9px rgba(0, 0, 0, 0.042),
-    0 9.6px 33.4px rgba(0, 0, 0, 0.05),
-    0 23px 80px rgba(0, 0, 0, 0.07);
   height: 400px;
 }
 
@@ -312,9 +306,14 @@ nav {
   height: 14em;
   text-align: center;
   width: 14em;
+  min-width: 23%;
   margin: 3em auto;
   border-radius: 4px;
   box-shadow: 0 0 0 2px var(--rose-gold), 0 0.25em 0 0 var(--rose-gold);
+}
+
+.gather-here-text {
+  font-size: 1em;
 }
 
 .fa-globe-americas, .fa-info {
@@ -328,6 +327,21 @@ nav {
 
 .in-header {
   font-size: 2em;
+}
+
+.footer {
+  background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+  box-shadow: 0px 5px 22px 0px var(--dk-grey);
+  height: 13em;
+}
+
+.footer-text {
+  font-weight: 700;
+}
+
+.hover {
+  color: var(--turquoise) !important;
+  font-weight: 700;
 }
 
 
@@ -368,4 +382,7 @@ nav {
     -webkit-transform: translateY(-10px);
     transform: translateY(-10px);
   }
+
 }
+
+
