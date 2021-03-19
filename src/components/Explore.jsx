@@ -1,6 +1,5 @@
 import axios from 'axios'
 import React, { Component } from 'react'
-// eslint-disable-next-line
 import { Redirect } from 'react-router-dom'
 
 let baseURL = ''
@@ -33,29 +32,6 @@ export default class Explore extends Component {
             })
         })
     }
-
-export default class Explore extends Component {
-	constructor(props) {
-		super(props)
-		this.state = {
-			cities: [],
-			someRandomCity: {
-				City: '',
-				State: '',
-				Activity: ''
-			},
-		}
-	}
-
-	getCities() {
-		axios.get(baseURL + '/cities')
-			.then(data => {
-				console.log(data)
-				this.setState({ cities: data.data }, () => {
-					this.randomCities()
-				})
-			})
-	}
 
 
 	componentDidMount() {
