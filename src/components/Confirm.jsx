@@ -1,8 +1,12 @@
+// eslint-disable-next-line
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Modal from 'react-bootstrap/Modal';
+// eslint-disable-next-line
 import ModalHeader from 'react-bootstrap/ModalHeader';
+// eslint-disable-next-line
 import ModalBody from 'react-bootstrap/ModalBody';
+// eslint-disable-next-line
 import ModalFooter from 'react-bootstrap/ModalFooter';
 import Button from 'react-bootstrap/Button';
 

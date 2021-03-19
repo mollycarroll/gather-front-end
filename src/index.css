@@ -32,18 +32,17 @@ nav {
   box-shadow: 0px 5px 22px 0px var(--dk-grey);
 }
 
+.container-fluid {
+  padding: 0 !important;
+}
+
 .for-backgrounds {
   background-color: var(--mint) !important;
 }
 
-.fa-cotton-bureau {
-  color: var(--red-ish);
-  font-size: 2.5em;
-}
-
 .nav-link {
   color: var(--not-black);
-  font-size: 1em;
+  font-size: 1.5em;
 }
 
 .nav-link:hover {
@@ -52,7 +51,7 @@ nav {
 }
 
 .navbar-text {
-  color: var(--turquoise) !important;
+  color: var(--not-black) !important;
   font-size: 2em;
 }
 
@@ -62,7 +61,7 @@ nav {
   height: 3px;
   margin-left: 10em;
   margin-right: 10em;
-  z-index: 5000;
+  z-index: 1000;
 }
 
 .page-wrapper {
@@ -75,13 +74,7 @@ nav {
   background: var(--mint);
 }
 
-.page-content:hover .each-item {
-  filter: blur(1px);
-  opacity: .5;
-  transform: scale(.98);
-}
-
-.page-content:hover .each-item:hover {
+.each-item:hover {
   animation: bounce 1s;
   box-shadow: 0px 14px 80px #FFFFFF;
   filter: blur(0px);
@@ -89,14 +82,33 @@ nav {
   transform: scale(1);
 }
 
+.page-content-show {
+  animation: fade-in 1s ease;
+  background: var(--mint);
+  margin-top: 3em;
+}
+
 .each-item {
   background: var(--gold);
-  box-shadow: 0px 14px 80px #FFFFFF;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   color: var(--not-black);
   height: 15em;
   margin: 2em;
   padding: 1em;
   width: 15em;
+  z-index: 1000;
+}
+
+.each-item-show {
+  background: var(--gold);
+  box-shadow: 0px 14px 80px #FFFFFF;
+  color: var(--not-black);
+  height: 23em;
+  margin: 2em;
+  padding: 1em;
+  width: 23em;
+  z-index: 1000;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .each-title {
@@ -121,7 +133,8 @@ nav {
   bottom: 0;
   color: white;
   font-weight: 700;
-  width: 40%;
+  width: 8.5em;
+  height: 2em;
 }
 
 /* refer to line 9 in RESOURCES.md for citation */
@@ -156,14 +169,51 @@ nav {
   -webkit-mask-image: -webkit-gradient(linear, right top, right bottom, from(transparent), color-stop(1%, transparent), to(rgba(0, 0, 0, 0.4)));
 }
 
-.fa-trash-alt {
-  bottom: 2em;
+.fa-trash-alt, .fa-pencil-alt {
+  bottom: 2.5em;
   cursor: pointer;
+  font-size: 1.5em;
+  color: black;
+}
+
+.fa-trash-alt:hover, .fa-calendar-alt:hover, .fa-facebook-f:hover, .fa-twitter:hover, .fa-envelope:hover, .fa-pencil-alt:hover {
+  color: white;
+}
+
+.fa-pencil-alt {
   font-size: 1.5em;
 }
 
-.fa-trash-alt:hover {
-  color: white;
+.fa-trash-alt {
+  left: 2em;
+}
+
+.fa-calendar-alt {
+  bottom: .75em;
+  color: black;
+  right: .75em;
+  font-size: 1.5em;
+}
+
+.fa-facebook-f {
+  font-size: 1.5em;
+  bottom: .75em;
+  right: 2em;
+  color: black;
+}
+
+.fa-twitter {
+  font-size: 1.5em;
+  bottom: .75em;
+  right: 2.8em;
+  color: black;
+}
+
+.fa-envelope {
+  font-size: 1.5em;
+  bottom: .75em;
+  right: 4.2em;
+  color: black;
 }
 
 .push {
@@ -176,7 +226,7 @@ nav {
   bottom: -2em;
 }
 
-.new-form {
+.new-form, .edit-form {
   z-index: 1000;
   background-color: var(--rose-gold);
   color: var(--not-black);
@@ -202,7 +252,19 @@ nav {
   transition: all 175ms cubic-bezier(0, 0, 1, 1);
 }
 
-.new-form-button::before {
+.edit-button {
+  border: 2px solid white;
+  font-weight: 700;
+  position: relative;
+  right: -22em;
+  border-radius: 1em;
+  text-align: center;
+  background: var(--rose-gold);
+  transform-style: preserve-3d;
+  transition: all 175ms cubic-bezier(0, 0, 1, 1);
+}
+
+.new-form-button::before, .edit-button::before {
   position: absolute;
   content: '';
   width: 100%;
@@ -218,20 +280,20 @@ nav {
   transition: all 175ms cubic-bezier(0, 0, 1, 1);
 }
 
-.new-form-button:hover {
+.new-form-button:hover, .edit-button:hover {
   background: var(--rose-gold);
   transform: translate(0, 0.4em);
 }
 
-.new-form-button:hover::before {
+.new-form-button:hover::before, .edit-button:hover::before {
   transform: translate3d(0, 0.75em, -1em);
 }
 
-.new-form-button:active {
+.new-form-button:active, .edit-button:active {
   transform: translate(0em, 0.75em);
 }
 
-.new-form-button:active::before {
+.new-form-button:active::before, .edit-button:active::before {
   transform: translate3d(0, 0, -1em);
   box-shadow: 0 0 0 2px white, 0 0.25em 0 0 var(--rose-gold);
 }
@@ -239,7 +301,35 @@ nav {
 .full-screen {
   height: 100vh;
   margin-top: -3em;
+  background-color: var(--mint);
 }
+
+.gather-here {
+  z-index: 1000;
+  background-color: white;
+  color: var(--red-ish);
+  font-weight: 700;
+  height: 14em;
+  text-align: center;
+  width: 14em;
+  margin: 3em auto;
+  border-radius: 4px;
+  box-shadow: 0 0 0 2px var(--rose-gold), 0 0.25em 0 0 var(--rose-gold);
+}
+
+.fa-globe-americas, .fa-info {
+  color: black;
+  margin-right: .5em;
+}
+
+.fa-map {
+  color: var(--red-ish);
+}
+
+.in-header {
+  font-size: 2em;
+}
+
 
 @keyframes fade-in {
   from {

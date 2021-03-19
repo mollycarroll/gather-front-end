@@ -84,8 +84,10 @@ class App extends Component {
 
 						<Route exact path='/:id' render={(props) => <Event cities ={this.state.cities}/>} />
 					</Switch>
-      			</div>
-	  		</Router>
+				</div>
+				<Footer />
+			</Router>
+
 		)
 	}
 }
