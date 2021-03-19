@@ -98,6 +98,7 @@ class Event extends Component {
 								<i className="far fa-trash-alt position-absolute"></i>
 							</Confirm>
 						</div>
+
 					</section>
 				</div>
 				<div className="container-fluid full-screen">
@@ -112,7 +113,6 @@ class Event extends Component {
 				</div>
 
 			</div>
-
 
 		)
 	}
