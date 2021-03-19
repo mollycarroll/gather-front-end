@@ -7,12 +7,12 @@ class Header extends Component {
 			<div>
         <nav className="navbar navbar-expand-lg">
           <div className="container-fluid">
-            <Link to="/" className="navbar-brand"><i className="fab fa-cotton-bureau"></i><span className="navbar-text ml-2">
-              Gather
+            <Link to="/" className="navbar-brand"><i className="far fa-map in-header"></i><span className="navbar-text ml-2">
+              G a t h e r
             </span></Link>
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <Link to='/create' className='nav-link'>Create</Link>
+                <Link to='/create' className='nav-link'>C r e a t e</Link>
               </li>
             </ul>
           </div>

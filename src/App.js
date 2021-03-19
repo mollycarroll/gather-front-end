@@ -72,21 +72,22 @@ class App extends Component {
 		return (
 			<Router>
 				<div>
-        			<Header />
+					<Header />
 					<Switch>
-					<Route exact path='/'>
-						<Home events={ this.state.events } />
-					</Route>
+						<Route exact path='/'>
+							<Home events={ this.state.events } />
+						</Route>
 
-					<Route path='/create'>
-						<NewForm handleAddEvent={ (event) => this.handleAddEvent(event) } />
-					</Route>
+						<Route path='/create'>
+							<NewForm handleAddEvent={ (event) => this.handleAddEvent(event) } />
+						</Route>
 
-					<Route exact path='/:id' render={(props) => <Event cities ={this.state.cities}/>} />
+						<Route exact path='/:id' render={(props) => <Event cities ={this.state.cities}/>} />
 					</Switch>
-      			</div>
+				</div>
 				<Footer />
-	  		</Router>
+			</Router>
+
 		)
 	}
 }

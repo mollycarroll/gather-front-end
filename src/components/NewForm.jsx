@@ -2,11 +2,13 @@ import axios from 'axios'
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import Form from 'react-bootstrap/Form';
+// eslint-disable-next-line
 import FormControl from 'react-bootstrap/FormControl';
 import Col from 'react-bootstrap/Col'
+// eslint-disable-next-line
 import Select from 'react-select';
+// eslint-disable-next-line
 import Moment from 'moment';
-import Footer from './Footer.jsx'
 
 let baseURL = ''
 
@@ -81,7 +83,7 @@ export default class NewForm extends Component {
 		}
 
 		return (
-			<div className="container-fluid for-backgrounds full-screen">
+			<div className="container-fluid full-screen">
 				<h1 className="slight-push text-center my-4">What's Goin' On?</h1>
 				<hr className="large push"></hr>
 
@@ -135,7 +137,6 @@ export default class NewForm extends Component {
 					</Form.Group>
 					<button type = "submit" className="new-form-button">Create New Event <i class="far fa-hand-peace"></i></button>
 				</Form>
-				<Footer />
 			</div>
 		)
 	}
