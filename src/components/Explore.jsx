@@ -62,10 +62,10 @@ export default class Explore extends Component {
 
 				<div className="gather-here">
 					{/* after the icon, have it render city, state */}
-					<i class="fas fa-globe-americas mt-4"></i><span>City, State</span>
+					<i class="fas fa-globe-americas mt-4"></i><span className="gather-here-text">City, State</span>
 					<br></br><br></br>
 					{/* after the icon, have it render activity */}
-					<i class="fas fa-info ml-1"></i><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+					<i class="fas fa-info ml-1"></i><span className="gather-here-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
 				</div>
 
 
