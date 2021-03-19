@@ -115,9 +115,9 @@ class Event extends Component {
 						</div>
 						<div className={editForm ? 'edit-form' : null} className="for-backgrounds container-fluid full-screen">
 							<EditForm className="for-backgrounds container-fluid"
-						event={ this.state }
-						handleChange={ (e) => this.handleChange(e) }
-						handleSubmit={ (e) => this.handleSubmit(e) }
+								event={ this.state }
+								handleChange={ (e) => this.handleChange(e) }
+								handleSubmit={ (e) => this.handleSubmit(e) }
 					/>
 				</div>
 
