@@ -1,70 +1,54 @@
-# Getting Started with Create React App
+# :wave: Gather
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+Gather is an event planning app that allows users to create and track different types of events. The home page displays a list of events, and each event has its own page with further details. On an individual event's page, there is a suggested city and additional activity for further planning inspiration. 
 
-In the project directory, you can run:
+## Contributors
+[Jamera McNeil](https://github.com/JameraMcNeil)
+[Molly Carroll](https://github.com/mollycarroll)
+[Jessica Gallagher](http://iamjessg.com/)
 
-### `npm start`
+## :woman_technologist: Ingredients
+***Please refer to the ``RESOURCES.md`` file for credit and citation information.***
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+-   Languages:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+    -   HTML5
+    -   CSS3
+    -   JavaScript
+    -   React.js
 
-### `npm test`
+-   Design:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    -   Twitter Bootstrap
+    -   Google Fonts
 
-### `npm run build`
+-   Build:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    -   Visual Studio Code Text Editor
+    -   MongoDB / Mongoose ODM
+    -   Express
+    -   Node.js
+    -   Postman
+    -   Heroku
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## :rocket: Features
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+-   Mobile-friendly, responsive design
 
-### `npm run eject`
+-   MVC file structure
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+-   Multiple models
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## :world_map: RESTful Routes
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+|#|Action|URL|HTTP|Mongoose Method|
+|:---:|:---:|:---:|:---:|:---:|:---:|
+|1| Index |  | GET | Event.find() |
+|2| Show | /:id | GET | Event.findById |
+|3| New | /create | GET | none |
+|4| Create | / | POST | Event.create(req.body) |
+|5| Edit | /:id | GET | Event.findById |
+|6| Update | /:id/edit | PUT | Event.findByIdAndUpdate |
+|7| Destroy | /:id | DELETE | Event.findByIdAndRemove |
