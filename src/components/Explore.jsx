@@ -11,7 +11,9 @@ if(process.env.NODE_ENV === 'development') {
 	baseURL = 'https://pure-waters-81977.herokuapp.com'
 }
 
-class Explore extends Component {
+
+
+export default class Explore extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
@@ -22,16 +24,6 @@ class Explore extends Component {
 				Activity: ''
 			},
 		}
-	}
-
-	getCities() {
-		axios.get(baseURL + '/cities')
-			.then(data => {
-				console.log(data)
-				this.setState({ cities: data.data }, () => {
-					this.randomCities()
-				})
-			})
 	}
 
 	getCities() {
@@ -81,7 +73,6 @@ class Explore extends Component {
 
 
 				{/* <p>City: {this.state.someRandomCity.City} </p>
-
 					<p>State: {this.state.someRandomCity.State} </p>
 				<p>Activity: {this.state.someRandomCity.Activity} </p> */}
 
@@ -89,5 +80,3 @@ class Explore extends Component {
 		)
 	}
 };
-
-export default Explore
