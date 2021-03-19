@@ -10,28 +10,40 @@ if(process.env.NODE_ENV === 'development') {
 	baseURL = 'https://pure-waters-81977.herokuapp.com'
 }
 
-export default class Explore extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            cities: [],
-            someRandomCity: {
-                City: '',
-                State: '',
-                Activity: ''
-            },
-        }
-    }
 
-    getCities() {
-        axios.get(baseURL + '/cities')
-        .then(data => {
-            console.log(data)
-            this.setState({ cities: data.data}, () => {
-                this.randomCities()
-            })
-        })
-    }
+class Explore extends Component {
+	constructor(props) {
+		super(props)
+		this.state = {
+			cities: [],
+			someRandomCity: {
+				City: '',
+				State: '',
+				Activity: ''
+			},
+		}
+	}
+
+	getCities() {
+		axios.get(baseURL + '/cities')
+			.then(data => {
+				console.log(data)
+				this.setState({ cities: data.data }, () => {
+					this.randomCities()
+				})
+			})
+	}
+
+	getCities() {
+		axios.get(baseURL + '/cities')
+			.then(data => {
+				console.log(data)
+				this.setState({ cities: data.data }, () => {
+					this.randomCities()
+				})
+			})
+	}
+
 
 
 	componentDidMount() {
@@ -66,6 +78,8 @@ export default class Explore extends Component {
 				</div>
 
             </div>
-        )
-    }
+		)
+	}
 };
+
+export default Explore
