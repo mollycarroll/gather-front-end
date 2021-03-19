@@ -3,10 +3,10 @@ import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import Form from 'react-bootstrap/Form';
 import FormControl from 'react-bootstrap/FormControl';
-import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col'
 import Select from 'react-select';
 import Moment from 'moment';
+import Footer from './Footer.jsx'
 
 let baseURL = ''
 
@@ -81,57 +81,62 @@ export default class NewForm extends Component {
 		}
 
 		return (
+			<div className="container-fluid for-backgrounds full-screen">
+				<h1 className="slight-push text-center my-4">What's Goin' On?</h1>
+				<hr className="large push"></hr>
 
-			<Form onSubmit={ (event) => this.handleSubmit(event) }>
-        <Form.Group>
-          <Form.Row>
-            <Form.Label column lg={1} htmlFor='creator'>Name:</Form.Label>
-            <Col className="col-sm-2">
-              <Form.Control type='text' name='creator' id='creator' onChange={ this.handleChange } />
-            </Col>
-          </Form.Row>
-        </Form.Group>
-        <Form.Group>
-          <Form.Row>
-            <Form.Label column lg={1} htmlFor='title'>Event Title:</Form.Label>
-            <Col className="col-sm-2">
-              <Form.Control type='text' name='title' id='title' onChange={ this.handleChange } />
-            </Col>
-          </Form.Row>
-        </Form.Group>
-        <Form.Group>
-          <Form.Row>
-            <Form.Label column lg={1} htmlFor='date'>Date:</Form.Label>
-            <Col className="col-sm-2">
-              <Form.Control type='date' name='date' id='date' onChange={ this.handleChange } />
-            </Col>
-          </Form.Row>
-        </Form.Group>
-        <Form.Group>
-          <Form.Row>
-            <Form.Label column lg={1} htmlFor='category'>Category:</Form.Label>
-            <Col className="col-sm-2">
-              <Form.Control as="select" name='category' id='category' onChange={ this.handleChange }>
-                <option>Night-out</option>
-                <option>Nature</option>
-                <option>Game Night</option>
-                <option>Restaurant</option>
-                <option>Movie</option>
-                <option>House Party</option>
-              </Form.Control>
-            </Col>
-          </Form.Row>
-        </Form.Group>
-				<Form.Group>
-          <Form.Row>
-            <Form.Label column lg={1} htmlFor='description'>Description:</Form.Label>
-            <Col className="col-sm-2">
-              <Form.Control as='textarea' rows={6} name='description' id='description' onChange={ this.handleChange } />
-            </Col>
-          </Form.Row>
-        </Form.Group>
-        <Button type = "submit">Create New Event</Button>
-      </Form>
+				<Form className="new-form" onSubmit={ (event) => this.handleSubmit(event) }>
+					<Form.Group className="pt-4 ml-4">
+						<Form.Row>
+							<Form.Label column lg={3} htmlFor='creator'>Name:</Form.Label>
+							<Col lg={8}>
+								<Form.Control type='text' name='creator' id='creator' onChange={ this.handleChange } />
+							</Col>
+						</Form.Row>
+					</Form.Group>
+					<Form.Group className="ml-4">
+						<Form.Row>
+							<Form.Label column lg={3} htmlFor='title'>Event Title:</Form.Label>
+							<Col lg={8}>
+								<Form.Control type='text' name='title' id='title' onChange={ this.handleChange } />
+							</Col>
+						</Form.Row>
+					</Form.Group>
+					<Form.Group className="ml-4">
+						<Form.Row>
+							<Form.Label column lg={3} htmlFor='date'>Date:</Form.Label>
+							<Col lg={8}>
+								<Form.Control type='date' name='date' id='date' onChange={ this.handleChange } />
+							</Col>
+						</Form.Row>
+					</Form.Group>
+					<Form.Group className="ml-4">
+						<Form.Row>
+							<Form.Label column lg={3} htmlFor='category'>Category:</Form.Label>
+							<Col lg={8}>
+								<Form.Control as="select" name='category' id='category' onChange={ this.handleChange }>
+									<option>Night-out</option>
+									<option>Nature</option>
+									<option>Game Night</option>
+									<option>Restaurant</option>
+									<option>Movie</option>
+									<option>House Party</option>
+								</Form.Control>
+							</Col>
+						</Form.Row>
+					</Form.Group>
+					<Form.Group className="ml-4 pb-3 mb-2">
+						<Form.Row>
+							<Form.Label column lg={3} htmlFor='description'>Description:</Form.Label>
+							<Col lg={8}>
+								<Form.Control as='textarea' rows={6} name='description' id='description' onChange={ this.handleChange } />
+							</Col>
+						</Form.Row>
+					</Form.Group>
+					<button type = "submit" className="new-form-button">Create New Event <i class="far fa-hand-peace"></i></button>
+				</Form>
+				<Footer />
+			</div>
 		)
 	}
 }
