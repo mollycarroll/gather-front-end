@@ -83,9 +83,8 @@ class Event extends Component {
 			const editForm = this.state.editForm
 			return (
 					<div className="container-fluid for-backgrounds full-screen">
-						<Explore className="push"/>
+						<Explore className="push" cities = {this.props.cities}/>
 
-						{/* <Explore cities = {this.props.cities}/> */}
 						<h1 className="slight-push text-center my-4">Get the Deets</h1>
 						<hr className="large push"></hr>
 
