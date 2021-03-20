@@ -40,15 +40,3 @@ Gather is an event planning app that allows users to create and track different 
 -   MVC file structure
 
 -   Multiple models
-
-## :world_map: RESTful Routes
-
-|#|Action|URL|HTTP|Mongoose Method|
-|:---:|:---:|:---:|:---:|:---:|:---:|
-|1| Index |  | GET | Event.find() |
-|2| Show | /:id | GET | Event.findById |
-|3| New | /create | GET | none |
-|4| Create | / | POST | Event.create(req.body) |
-|5| Edit | /:id | GET | Event.findById |
-|6| Update | /:id/edit | PUT | Event.findByIdAndUpdate |
-|7| Destroy | /:id | DELETE | Event.findByIdAndRemove |
